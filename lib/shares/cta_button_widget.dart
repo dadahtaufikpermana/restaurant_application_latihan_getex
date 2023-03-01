@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Ctabutton extends StatelessWidget {
-  final Widget screen;
+  final String screens;
   const Ctabutton({
 
     Key? key,
-    required this.textTitle, required this.screen,
+    required this.textTitle, required this.screens,
   }) : super(key: key);
   final String textTitle;
 
@@ -28,15 +30,7 @@ class Ctabutton extends StatelessWidget {
                   padding: const EdgeInsets.all(4),
                   textStyle: const TextStyle(fontSize: 16),
                 ),
-                onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return screen;
-                        },
-                      ),
-                    );
-                },
+                  onPressed: () => Get.toNamed(screens),
                 child: Text(
                   textTitle,
                   style: const TextStyle(

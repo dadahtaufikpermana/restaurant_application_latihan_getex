@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
-class SplashScreen extends GetxController {
-  //TODO: Implement HomeController
+class ProfileController extends GetxController {
 
   final count = 0.obs;
   @override
