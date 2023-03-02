@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../../shares/styleSchema.dart';
-import '../../controllers/home_controller.dart';
+import '../../../../routes/app_pages.dart';
+import '../controllers/login_controller.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginView extends GetView<LoginController> {
+  const LoginView({Key? key}) : super(key: key);
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 535,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.all(50),
+                padding: const EdgeInsets.only(left: 46, right: 46, top: 50, bottom: 41),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -35,8 +31,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 15,
                             color: Colors.black26)),
                     TextFormField(
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 17),
+                      style:
+                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                       decoration: const InputDecoration(
                         hintText: "E-mail",
                       ),
@@ -51,63 +47,60 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Colors.black26)),
                     TextFormField(
                       obscureText: true,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 17),
+                      style:
+                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                       decoration: const InputDecoration(hintText: "Password"),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     TextButton(
-                      onPressed: () => {},
+                      onPressed: () {},
                       style: TextButton.styleFrom(
-                        foregroundColor: const Color.fromARGB(255, 250, 74, 12),
+                        foregroundColor: const Color(0xFFFA4A0C),
                       ),
                       child: const Text("Forgot passcode?",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 17)),
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 80,
                     ),
-                    Get.to(SplashScreen()),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return SplashScreen(
-                              );
-                            },
-                          ),
-                        );
-                      },
-                      child: Center(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 100,
-                            vertical: 25,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50.0),
-                            color: deepOrange800,
-                          ),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    )
+                    Flexible(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(child:
+                          buttonLoginWidget()
+                          )
 
-                      ],
+                        ],
+                      ),
                     ),
+                  ],
                 ),
               ),
+            ),
           ],
+        ),
+      ),
+    );
+  }
+  Widget buttonLoginWidget(){
+    return SizedBox(
+      width: 314,
+      height: 70,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: deepOrange800,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        onPressed: () => Get.offNamed(Routes.HOME),
+        child: Text(
+          "Login",
+          style: const TextStyle(color: Color(0xffffffff), fontSize: 20, fontFamily: 'SF-Pro'),
         ),
       ),
     );

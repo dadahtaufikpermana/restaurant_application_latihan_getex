@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({super.key, required this.textTitle, required this.screens});
 
   final String textTitle;
-  final Widget screens;
+  final String screens;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
           ),
         ),
-        onPressed: () {},
+          onPressed: () => Get.toNamed(screens),
         child: Text(
           textTitle,
           style: const TextStyle(color: Color(0xffffffff), fontSize: 17),

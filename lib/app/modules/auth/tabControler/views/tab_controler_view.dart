@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_application_latihan_getex/app/modules/home/views/login/signUp.dart';
 
-import '../loginPage.dart';
+import 'package:get/get.dart';
 
+import '../../login/views/login_view.dart';
+import '../../signUp/views/sign_up_view.dart';
+import '../controllers/tab_controler_controller.dart';
 
-class TabSlide extends StatelessWidget {
-  const TabSlide({super.key});
-
+class TabControlerView extends GetView<TabControlerController> {
+  const TabControlerView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,7 @@ class TabSlide extends StatelessWidget {
                           labelColor: Colors.black,
                           unselectedLabelColor: Colors.black,
                           tabs: [
-                            Tab(text: 'Login'),
+                            Tab (text: 'Login'),
                             Tab(text: 'Sign-up'),
                           ],
                         ),
@@ -50,10 +51,10 @@ class TabSlide extends StatelessWidget {
                       const SizedBox(
                           height: 500,
                           width: double.infinity,
-                         child: TabBarView(children: <Widget>[
-                           LoginScreen(),
-                           SignUpScreen()
-                         ]),)
+                          child: TabBarView(children: <Widget>[
+                            LoginView(),
+                            SignUpView()
+                          ]))
                     ])),
           ),
         ]),
@@ -61,3 +62,4 @@ class TabSlide extends StatelessWidget {
     );
   }
 }
+
