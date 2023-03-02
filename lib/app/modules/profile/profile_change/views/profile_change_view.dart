@@ -137,55 +137,55 @@ class ProfileChangeView extends GetView<ProfileChangeController> {
                                 borderRadius: BorderRadius.circular(20)),
                             child: Column(
                               children: [
-                                ListTile(
-                                  title: Container(
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          height: 40,
-                                          width: 40,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              color: Color(0xFFF47B0A)),
-                                          child: SvgPicture.asset(
-                                              'assets/icon/icon_card.svg',
-                                              height: 12,
-                                              width: 16,
-                                              fit: BoxFit.scaleDown),
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        const Text(
-                                          "Card",
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.w400),
-                                        )
-                                      ],
-                                    ),
+                              Obx(() => ListTile(
+                                title: Container(
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(10),
+                                            color: Color(0xFFF47B0A)),
+                                        child: SvgPicture.asset(
+                                            'assets/icon/icon_card.svg',
+                                            height: 12,
+                                            width: 16,
+                                            fit: BoxFit.scaleDown),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Text(
+                                        "Card",
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w400),
+                                      )
+                                    ],
                                   ),
-                                  leading: Radio<RadioButtonProfile>(
-                                    value: RadioButtonProfile.cardProfile,
-                                    groupValue:
-                                    controller.character.value,
-                                    activeColor: const Color(0xFFFA4A0C),
-                                    onChanged: (RadioButtonProfile? value) {
-                                      controller.onClickProfile(
-                                          RadioButtonProfile.cardProfile);
-                                    },
-                                  ),
-                                  onTap: () {
+                                ),
+                                leading: Radio<RadioButtonProfile>(
+                                  value: RadioButtonProfile.cardProfile,
+                                  groupValue:
+                                  controller.character.value,
+                                  activeColor: const Color(0xFFFA4A0C),
+                                  onChanged: (RadioButtonProfile? value) {
                                     controller.onClickProfile(
                                         RadioButtonProfile.cardProfile);
                                   },
                                 ),
+                                onTap: () {
+                                  controller.onClickProfile(
+                                      RadioButtonProfile.cardProfile);
+                                },
+                              ),),
                                 Divider(
                                     color: Colors.black26,
                                     indent: 80,
                                     endIndent: 30),
-                                ListTile(
+                                Obx(() => ListTile(
                                   onTap: () {
                                     controller.onClickProfile(
                                         RadioButtonProfile.bankAccountProfile);
@@ -228,55 +228,55 @@ class ProfileChangeView extends GetView<ProfileChangeController> {
                                           RadioButtonProfile.bankAccountProfile);
                                     },
                                   ),
-                                ),
+                                ),),
                                 Divider(
                                     color: Colors.black26,
                                     indent: 80,
                                     endIndent: 30),
-                                ListTile(
-                                  onTap: () {
-                                    controller.onClickProfile(
-                                        RadioButtonProfile.bankAccountProfile);
-                                  },
-                                  title: Container(
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          height: 40,
-                                          width: 40,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              color: Color(0xFF0038FF)),
-                                          child: SvgPicture.asset(
-                                              'assets/icon/icon_paypal.svg',
-                                              height: 12,
-                                              width: 16,
-                                              fit: BoxFit.scaleDown),
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        const Text(
-                                          "Paypal",
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.w400),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  leading: Radio<RadioButtonProfile>(
-                                    value: RadioButtonProfile.paypalProfile,
-                                    groupValue:
-                                    controller.character.value,
-                                    activeColor: const Color(0xFFFA4A0C),
-                                    onChanged: (RadioButtonProfile? value) {
-                                      controller.onClickProfile(
-                                          RadioButtonProfile.paypalProfile);
-                                    },
+                              Obx(() => ListTile(
+                                onTap: () {
+                                  controller.onClickProfile(
+                                      RadioButtonProfile.bankAccountProfile);
+                                },
+                                title: Container(
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(10),
+                                            color: Color(0xFF0038FF)),
+                                        child: SvgPicture.asset(
+                                            'assets/icon/icon_paypal.svg',
+                                            height: 12,
+                                            width: 16,
+                                            fit: BoxFit.scaleDown),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Text(
+                                        "Paypal",
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w400),
+                                      )
+                                    ],
                                   ),
                                 ),
+                                leading: Radio<RadioButtonProfile>(
+                                  value: RadioButtonProfile.paypalProfile,
+                                  groupValue:
+                                  controller.character.value,
+                                  activeColor: const Color(0xFFFA4A0C),
+                                  onChanged: (RadioButtonProfile? value) {
+                                    controller.onClickProfile(
+                                        RadioButtonProfile.paypalProfile);
+                                  },
+                                ),
+                              ), ),
                               ],
                             ),
                           ),
