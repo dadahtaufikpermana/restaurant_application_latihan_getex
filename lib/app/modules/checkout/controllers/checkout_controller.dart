@@ -4,9 +4,6 @@ enum RadioButtonProfile { doorDelivery, pickUp }
 
 class CheckoutController extends GetxController {
   final Rx<RadioButtonProfile> character = RadioButtonProfile.doorDelivery.obs;
-  //TODO: Implement CheckoutController
-
-  final count = 0.obs;
 
   void onClickRadio(value){
     character.value = value;
@@ -26,6 +23,4 @@ class CheckoutController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

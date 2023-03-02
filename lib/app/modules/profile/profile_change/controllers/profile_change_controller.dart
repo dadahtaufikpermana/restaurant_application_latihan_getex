@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 enum RadioButtonProfile { cardProfile, bankAccountProfile, paypalProfile }
 
 class ProfileChangeController extends GetxController {
-  //TODO: Implement ProfileChangeController
 
   final Rx<RadioButtonProfile> character = RadioButtonProfile.cardProfile.obs;
 
@@ -11,7 +10,6 @@ class ProfileChangeController extends GetxController {
     character.value = value;
   }
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -26,6 +24,4 @@ class ProfileChangeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

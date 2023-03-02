@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
 
 class NetworkController extends GetxController {
-  //TODO: Implement NetworkController
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +16,4 @@ class NetworkController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

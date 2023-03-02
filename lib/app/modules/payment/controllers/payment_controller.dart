@@ -5,7 +5,6 @@ enum PaymentGroup { card, bankAccount }
 enum DeliveryGroup { doorDelivery, pickUp }
 
 class PaymentController extends GetxController {
-  //TODO: Implement PaymentController
 
   final Rx<PaymentGroup> char = PaymentGroup.card.obs;
   final Rx<DeliveryGroup> group = DeliveryGroup.doorDelivery.obs;
@@ -17,8 +16,6 @@ class PaymentController extends GetxController {
   void onClickDelivery(value){
     group.value = value;
   }
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -33,6 +30,4 @@ class PaymentController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
