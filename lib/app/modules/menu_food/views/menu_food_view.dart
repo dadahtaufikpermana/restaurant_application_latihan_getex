@@ -53,36 +53,36 @@ class MenuFoodView extends GetView<MenuFoodController> {
                 mainAxisSpacing: 50,
                 children: [
                   FoodCard(
-                    title: "Veggoe\nTomatto Mix",
-                    imageFood: 'assets/image/ic_food.png',
+                    text: "Veggoe\nTomatto Mix",
+                    imageUrl: 'assets/image/ic_food.png',
                   ),
                   FoodCard(
-                    title: "Egg and\nCucumber..",
-                    imageFood: 'assets/image/ic_food3.png',
+                    text: "Egg and\nCucumber..",
+                    imageUrl: 'assets/image/ic_food3.png',
                   ),
                   FoodCard(
-                    title: "Fried\nChicken m.",
-                    imageFood: 'assets/image/ic_food4.png',
+                    text: "Fried\nChicken m.",
+                    imageUrl: 'assets/image/ic_food4.png',
                   ),
                   FoodCard(
-                    title: "Moi-moi\nand Ekpa",
-                    imageFood: 'assets/image/ic_food5.png',
+                    text: "Moi-moi\nand Ekpa",
+                    imageUrl: 'assets/image/ic_food5.png',
                   ),
                   FoodCard(
-                    title: "Bakpau",
-                    imageFood: 'assets/image/ic_food5.png',
+                    text: "Bakpau",
+                    imageUrl: 'assets/image/ic_food5.png',
                   ),
                   FoodCard(
-                    title: "chuankie",
-                    imageFood: 'assets/image/ic_food5.png',
+                    text: "chuankie",
+                    imageUrl: 'assets/image/ic_food5.png',
                   ),
                   FoodCard(
-                    title: "Veggoe\nTomatto Mix",
-                    imageFood: 'assets/image/ic_food.png',
+                    text: "Veggoe\nTomatto Mix",
+                    imageUrl: 'assets/image/ic_food.png',
                   ),
                   FoodCard(
-                    title: "Egg and\nCucumber..",
-                    imageFood: 'assets/image/ic_food3.png',
+                    text: "Egg and\nCucumber..",
+                    imageUrl: 'assets/image/ic_food3.png',
                   ),
                 ],
               ),

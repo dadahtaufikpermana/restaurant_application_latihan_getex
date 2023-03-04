@@ -5,9 +5,9 @@ import 'package:restaurant_application_latihan_getex/app/modules/splash/views/sp
 class FoodCard extends StatelessWidget {
   const FoodCard({
     Key? key,
-    required this.title, required this.imageFood}) : super(key: key);
-  final String title;
-  final String imageFood;
+    required this.text, required this.imageUrl}) : super(key: key);
+  final String text;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class FoodCard extends StatelessWidget {
                       children: [
                         Container(
                           child: Text(
-                              title,
+                              text,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 20,
@@ -83,7 +83,7 @@ class FoodCard extends StatelessWidget {
                     height: 100,
                     width: 100,
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('${imageFood}'),
+                      backgroundImage: AssetImage('${imageUrl}'),
                     ),
                   ))
             ],
