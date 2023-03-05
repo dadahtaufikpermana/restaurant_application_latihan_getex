@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:restaurant_application_latihan_getex/app/modules/detail_food_screen/bindings/detail_food_screen_binding.dart';
+import 'package:restaurant_application_latihan_getex/app/modules/detail_food_screen/views/detail_food_screen_view.dart';
+
 import '../modules/auth/login/bindings/login_binding.dart';
 import '../modules/auth/login/views/login_view.dart';
 import '../modules/auth/signUp/bindings/sign_up_binding.dart';
@@ -63,7 +66,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HOME,
-      page: () =>  HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -111,17 +114,20 @@ class AppPages {
       page: () => ProfileView(),
       binding: ProfileBinding(),
     ),
-
-      GetPage(
-        name: _Paths.PROFILE_CHANGE,
-        page: () => ProfileChangeView(),
-        binding: ProfileChangeBinding(),
-      ),
-
+    GetPage(
+      name: _Paths.PROFILE_CHANGE,
+      page: () => ProfileChangeView(),
+      binding: ProfileChangeBinding(),
+    ),
     GetPage(
       name: _Paths.ORDER,
       page: () => const OrderView(),
       binding: OrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_FOOD_SCREEN,
+      page: () => DetailFoodScreenView(),
+      binding: DetailFoodScreenBinding(),
     ),
   ];
 }

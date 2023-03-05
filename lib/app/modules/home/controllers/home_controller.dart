@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
@@ -6,20 +7,10 @@ import '../../../data/meal_service.dart';
 import '../../../models/meal_models.dart';
 
 class HomeController extends GetxController {
-
-  final GlobalKey<SideMenuState> sideMenuKey = GlobalKey<SideMenuState>();
-
+  final dio = Dio();
   RxBool isLoading = false.obs;
   RxList<Meal> listMeal = <Meal>[].obs;
   final mealService = MealService();
-
-  void toggleMenu() {
-    if (sideMenuKey.currentState!.isOpened){
-      sideMenuKey.currentState!.closeSideMenu();
-    } else {
-      sideMenuKey.currentState!.openSideMenu();
-    }
-  }
 
   @override
   void onInit() {
@@ -27,16 +18,49 @@ class HomeController extends GetxController {
     getListMeals();
   }
 
-  getListMeals() async{
+  // getListMeals() async {
+  //   isLoading(true);
+  //   try {
+  //     dio.options.connectTimeout = Duration(seconds: 5);
+  //     var response = await dio.get('1/filter.php?c=Seafood');
+  //     if (response.statusCode == 200) {
+  //       Meals res = Meals.fromJson(response.data);
+  //       listMeal.addAll(res.meals);
+  //       print(listMeal);
+  //     } else {
+  //       print(response.statusMessage);
+  //     }
+  //     isLoading(false);
+  //   } catch (e) {
+  //     isLoading(false);
+  //     print(e.toString());
+  //   }
+  // }
+
+  getListMeals() async {
     isLoading(true);
-    try{
+    try {
       var response = await mealService.getMeals();
       listMeal.addAll(response.meals);
       isLoading(false);
-    }
-    catch(e){
+    } catch (e) {
       isLoading(false);
       Get.snackbar('Error', e.toString());
     }
+
+    //   dio.options.connectTimeout = Duration(seconds: 5);
+    //   var response = await dio.get('1/filter.php?c=Seafood');
+    //   if (response.statusCode == 200) {
+    //     Meals res = Meals.fromJson(response.data);
+    //     listMeal.addAll(res.meals);
+    //     print(listMeal);
+    //   } else {
+    //     print(response.statusMessage);
+    //   }
+    //   isLoading(false);
+    // } catch (e) {
+    //   isLoading(false);
+    //   print(e.toString());
+    // }
   }
 }

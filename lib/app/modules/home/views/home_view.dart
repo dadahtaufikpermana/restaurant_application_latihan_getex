@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 import 'package:restaurant_application_latihan_getex/app/modules/menu_food/views/menu_food_view.dart';
 import 'package:restaurant_application_latihan_getex/app/modules/no_offer/views/no_offer_view.dart';
+import 'package:restaurant_application_latihan_getex/shares/card_food_widget.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 import 'package:skeletons/skeletons.dart';
 import '../../../../shares/food_card_widget.dart';
@@ -17,6 +17,8 @@ class HomeView extends GetView<HomeController> {
   final HomeController homeController = Get.put(HomeController());
 
   final GlobalKey<SideMenuState> _sideMenuKey = GlobalKey<SideMenuState>();
+
+  HomeView({super.key});
   toggleMenu([bool end = false]) {
     if (!end) {
       final state = _sideMenuKey.currentState!;
@@ -177,7 +179,7 @@ class HomeView extends GetView<HomeController> {
                                                   (item) => Padding(
                                                 padding: EdgeInsets.only(
                                                     right: 20),
-                                                child: FoodCard(
+                                                child: FoodCardWidget(
                                                     imageUrl:
                                                     item.strMealThumb,
                                                     text: item.strMeal),
@@ -191,20 +193,20 @@ class HomeView extends GetView<HomeController> {
                                       child: ListView(
                                         scrollDirection: Axis.horizontal,
                                         children: [
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food1.png",
                                               text: "Bubur ayam"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food2.png",
                                               text: "Bubur ayam"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food2.png",
                                               text: "Bubur ayam"),
                                         ],
                                       ),
@@ -213,20 +215,20 @@ class HomeView extends GetView<HomeController> {
                                       child: ListView(
                                         scrollDirection: Axis.horizontal,
                                         children: [
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food2.png",
                                               text: "Nasi padang"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food1.png",
                                               text: "Nasi padang"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food4.png",
                                               text: "Nasi padang"),
                                         ],
                                       ),
@@ -235,21 +237,21 @@ class HomeView extends GetView<HomeController> {
                                       child: ListView(
                                         scrollDirection: Axis.horizontal,
                                         children: [
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
-                                              text: "Es campur"),
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food2.png",
+                                              text: "Es Campur"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
-                                              text: "Es campur"),
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food1.png",
+                                              text: "Jus Jeruk"),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          FoodCard(
-                                              imageUrl: "assets/images/food1.png",
-                                              text: "Es campur"),
+                                          FoodCardWidget(
+                                              image: "assets/image/ic_food2.png",
+                                              text: "Teh Manis"),
                                         ],
                                       ),
                                     ),

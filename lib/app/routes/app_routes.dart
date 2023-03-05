@@ -12,14 +12,15 @@ abstract class Routes {
   static const HISTORY = _Paths.HISTORY;
   static const NETWORK = _Paths.NETWORK;
   static const NO_OFFER = _Paths.NO_OFFER;
-  static const SIGN_UP =  _Paths.SIGN_UP;
-  static const TAB_CONTROLER =  _Paths.TAB_CONTROLER;
+  static const SIGN_UP = _Paths.SIGN_UP;
+  static const TAB_CONTROLER = _Paths.TAB_CONTROLER;
   static const CART = _Paths.CART;
   static const CHECKOUT = _Paths.CHECKOUT;
   static const PAYMENT = _Paths.PAYMENT;
   static const PROFILE = _Paths.PROFILE;
   static const PROFILE_CHANGE = _Paths.PROFILE_CHANGE;
   static const ORDER = _Paths.ORDER;
+  static const DETAIL_FOOD_SCREEN = _Paths.DETAIL_FOOD_SCREEN;
 }
 
 abstract class Splash {
@@ -46,9 +47,11 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const PROFILE_CHANGE = '/profile-change';
   static const ORDER = '/order';
+  static const DETAIL_FOOD_SCREEN = '/detail-food-screen';
 }
 
 abstract class _Splash {
   _Splash._();
   static const SPLASH = '/splash';
+
 }
