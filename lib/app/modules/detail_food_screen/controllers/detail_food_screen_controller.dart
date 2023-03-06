@@ -23,7 +23,7 @@ class DetailFoodScreenController extends GetxController {
   void onInit() {
     super.onInit();
     final args = Get.arguments;
-    id = args['id'][0];
+    id = args['id'];
     getDetailMealsItem();
   }
 
