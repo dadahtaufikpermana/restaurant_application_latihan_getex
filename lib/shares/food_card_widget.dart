@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:restaurant_application_latihan_getex/app/modules/splash/views/splash_view.dart';
 
 import '../app/modules/detail_food_screen/views/detail_food_screen_view.dart';
 

@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../models/detail_product_models.dart';
+import '../models/detail_meals_models.dart';
 
-class DetailProductService {
+class DetailMealsService {
   final _connect = Get.find<GetConnect>();
 
-  Future<DetailProductModel> getDetailMeals({required String id}) async {
+  Future<DetailMealsModel> getDetailMeals({required String id}) async {
     final response = await _connect.get('1/lookup.php?i=$id',
-        decoder: (data) => DetailProductModel.fromJson(data as Map<String, dynamic>));
+        decoder: (data) => DetailMealsModel.fromJson(data as Map<String, dynamic>));
     if (!response.hasError) {
       return response.body!;
     } else {

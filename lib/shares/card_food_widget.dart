@@ -9,7 +9,7 @@ class FoodCardWidget extends StatelessWidget {
     Key? key,
     this.image = '',
     this.imageUrl = '',
-    this.id = '',
+    required this.id,
     required this.text,
   }) : super(key: key);
   final String image, imageUrl, text, id;

@@ -182,7 +182,8 @@ class HomeView extends GetView<HomeController> {
                                                 child: FoodCardWidget(
                                                     imageUrl:
                                                     item.strMealThumb,
-                                                    text: item.strMeal),
+                                                    text: item.strMeal,
+                                                    id: item.idMeal),
                                               ),
                                             )
                                           ],
@@ -190,70 +191,73 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                     ),
                                     Container(
-                                      child: ListView(
-                                        scrollDirection: Axis.horizontal,
-                                        children: [
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food1.png",
-                                              text: "Bubur ayam"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food2.png",
-                                              text: "Bubur ayam"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food2.png",
-                                              text: "Bubur ayam"),
-                                        ],
-                                      ),
+                                      // child: ListView(
+                                      //   scrollDirection: Axis.horizontal,
+                                      //   children: [
+                                      //     FoodCardWidget(
+                                      //       id: "",
+                                      //         image: "assets/image/ic_food1.png",
+                                      //         text: "Bubur ayam"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         id: "",
+                                      //         image: "assets/image/ic_food2.png",
+                                      //         text: "Bubur ayam"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         id: "",
+                                      //         image: "assets/image/ic_food2.png",
+                                      //         text: "Bubur ayam"),
+                                      //   ],
+                                      // ),
                                     ),
                                     Container(
-                                      child: ListView(
-                                        scrollDirection: Axis.horizontal,
-                                        children: [
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food2.png",
-                                              text: "Nasi padang"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food1.png",
-                                              text: "Nasi padang"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food4.png",
-                                              text: "Nasi padang"),
-                                        ],
-                                      ),
+                                      // child: ListView(
+                                      //   scrollDirection: Axis.horizontal,
+                                      //   children: [
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food2.png",
+                                      //         text: "Nasi padang"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food1.png",
+                                      //         text: "Nasi padang"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food4.png",
+                                      //         text: "Nasi padang"),
+                                      //   ],
+                                      // ),
                                     ),
                                     Container(
-                                      child: ListView(
-                                        scrollDirection: Axis.horizontal,
-                                        children: [
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food2.png",
-                                              text: "Es Campur"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food1.png",
-                                              text: "Jus Jeruk"),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          FoodCardWidget(
-                                              image: "assets/image/ic_food2.png",
-                                              text: "Teh Manis"),
-                                        ],
-                                      ),
+                                      // child: ListView(
+                                      //   scrollDirection: Axis.horizontal,
+                                      //   children: [
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food2.png",
+                                      //         text: "Es Campur"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food1.png",
+                                      //         text: "Jus Jeruk"),
+                                      //     SizedBox(
+                                      //       width: 20,
+                                      //     ),
+                                      //     FoodCardWidget(
+                                      //         image: "assets/image/ic_food2.png",
+                                      //         text: "Teh Manis"),
+                                      //   ],
+                                      // ),
                                     ),
                                   ]))
                         ],

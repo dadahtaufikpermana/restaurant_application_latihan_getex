@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:restaurant_application_latihan_getex/app/data/detail_product_service.dart';
-import 'package:restaurant_application_latihan_getex/app/models/detail_product_models.dart';
+import 'package:logger/logger.dart';
+import 'package:restaurant_application_latihan_getex/app/data/detail_meals_service.dart';
+import 'package:restaurant_application_latihan_getex/app/models/detail_meals_models.dart';
 
 class DetailFoodScreenController extends GetxController {
 
@@ -15,9 +16,9 @@ class DetailFoodScreenController extends GetxController {
   }
 
   RxBool isLoading = false.obs;
-  final mealDetailService = DetailProductService();
+  final mealDetailService = DetailMealsService();
   String id = '';
-  Rx<Meal?> detailMeal = Meal(idMeal: '').obs;
+  Rx<Meal> detailMeal =  Meal().obs;
 
   @override
   void onInit() {
@@ -30,9 +31,9 @@ class DetailFoodScreenController extends GetxController {
   getDetailMealsItem() async{
     isLoading(true);
     try{
-      DetailProductModel response = await mealDetailService.getDetailMeals(id: id);
+      DetailMealsModel response = await mealDetailService.getDetailMeals(id: id);
       var res = response.meals![0];
-      detailMeal(res);
+      detailMeal.value = res;
       isLoading(false);
     }
     catch(e){
