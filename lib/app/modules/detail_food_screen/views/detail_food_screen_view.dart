@@ -53,14 +53,27 @@ class DetailFoodScreenView extends GetView<DetailFoodScreenController> {
                 SizedBox(
                   height: 275,
                   width: 275,
-                  child: Image.asset('assets/image/ic_food1.png'),
-                ),
-                const Text(
-                  'Veggie tomato mix',
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontFamily: 'SF Pro',
-                      fontWeight: FontWeight.bold),
+                    child: Image(
+                        image: NetworkImage(controller
+                            .detailMeal
+                            .value
+                            ?.strMealThumb ??
+                            ''))),
+                SizedBox(height: 45),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20),
+                  child: Text(
+                    controller
+                        .detailMeal
+                        .value
+                        ?.strMeal ??
+                        '',
+                    style: TextStyle(
+                        fontSize: 28,
+                        fontFamily: 'SF Pro',
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10),
@@ -89,8 +102,11 @@ class DetailFoodScreenView extends GetView<DetailFoodScreenController> {
                               fontWeight: FontWeight.w600),
                         ),
                       ),
-                      const Text(
-                          'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm'),
+                      Text(controller
+                          .detailMeal
+                          .value
+                          ?.strYoutube ??
+                          ''),
                       const SizedBox(
                         height: 20,
                       ),
@@ -105,8 +121,11 @@ class DetailFoodScreenView extends GetView<DetailFoodScreenController> {
                               fontWeight: FontWeight.w600),
                         ),
                       ),
-                      const Text(
-                          'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.'),
+                      Text(controller
+                          .detailMeal
+                          .value
+                          ?.strInstructions ??
+                          ''),
                       Padding(
                         padding: EdgeInsets.only(bottom: 20, top: 50),
                         child: ButtonWidget(textTitle: "Add to cart", screens: Routes.CART),
