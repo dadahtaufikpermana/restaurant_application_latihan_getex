@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-import '../../../../../shares/styleSchema.dart';
+import '../../../../shares/styleSchema.dart';
+import '../../../routes/app_pages.dart';
+import '../controllers/splash_controller.dart';
 
-class SplashScreen extends GetView<SplashScreen> {
-  const SplashScreen({super.key});
-
+class SplashView extends GetView<SplashController> {
+  const SplashView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,13 +72,7 @@ class SplashScreen extends GetView<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Tab();
-                    },
-                  ),
-                ),
+                onTap: () => Get.toNamed(Routes.TAB_CONTROLER),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 100,

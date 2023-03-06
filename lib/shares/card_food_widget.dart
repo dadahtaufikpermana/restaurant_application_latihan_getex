@@ -1,79 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../app/modules/detail_food_screen/views/detail_food_screen_view.dart';
 
 class FoodCardWidget extends StatelessWidget {
   const FoodCardWidget({
     Key? key,
-    required this.title, required this.imageFood}) : super(key: key);
-  final String title;
-  final String imageFood;
+    this.image = '',
+    this.imageUrl = '',
+    required this.text,
+  }) : super(key: key);
+  final String image, imageUrl, text;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 8.0),
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => DetailFoodScreenView());
+      },
       child: SizedBox(
+        height: 300,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            Container(
-              height: 185,
-              width: 130,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 1,
-                    offset: Offset(0, 1), // changes position of shadow
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Container(
+                height: 185,
+                width: 140,
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.white),
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 70.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        child: Text(
-                            title,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            "N1,900",
-                            style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )
-                    ],
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 4),
+                        color: Color(0xFF393F3F).withOpacity(0.07),
+                        blurRadius: 40)
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
             ),
             Positioned(
-                top: -45,
-                left: 15,
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('${imageFood}'),
-                  ),
-                ))
+              top: 10,
+              left: 20,
+              child: Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(65),
+                  color: Colors.grey[500]!.withOpacity(0.3),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 4),
+                        color: Color(0xFF393F3F).withOpacity(0.07),
+                        blurRadius: 40)
+                  ],
+                ),
+                child: imageUrl == ''
+                    ? CircleAvatar(backgroundImage: AssetImage(image))
+                    : CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
+              ),
+            ),
           ],
         ),
       ),
