@@ -49,7 +49,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MENU_FOOD,
-      page: () => const MenuFoodView(),
+      page: () => MenuFoodView(),
       binding: MenuFoodBinding(),
     ),
     GetPage(
